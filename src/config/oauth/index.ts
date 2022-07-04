@@ -19,10 +19,10 @@ const defaultClient: IClientModel = new ClientModel({
     secret: 'e24d09e8adff230e44ab327d4658da6f2ee001af',
     type: 'confidential',
     redirectUris,
-    grants: ['authorization_code', 'refresh_token']
+    grants: ['authorization_code', 'refresh_token'],
 });
 
-defaultClient.save((err: Error) => {
+defaultClient.save(async (err: Error) => {
     if (err) {
         console.log('error during creating defaultClient');
         console.log(err);
